@@ -1,0 +1,31 @@
+<div class="container">
+    <h3 class="text-center mt-4">User Management</h3>
+    <div class="row mx-auto mt-5">
+        <mat-form-field appearance="fill">
+            <mat-label>Username:</mat-label>
+                <mat-select  (selectionChange)="onChange($event.value)">
+                    <mat-option *ngFor="let user of users;let i=index" [value]="user.username">{{user.username}}</mat-option>
+                </mat-select>
+        </mat-form-field>
+        <table class="table table-dark mx-auto mt-5">
+            <thead>
+              <tr>
+                <th scope="col">slno</th>
+                <th scope="col">name</th>
+                <th scope="col">category</th>
+                <th scope="col">amount</th>
+                <th scope="col">status</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let order of orders;let i=index">
+                    <td>{{i+1}}</td>
+                    <td>{{order.product.name}}</td>
+                    <td>{{order.product.category}}</td>
+                    <td>{{order.product.amount}}</td>
+                    <td>{{order.product.status}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

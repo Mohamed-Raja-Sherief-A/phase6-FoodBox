@@ -1,0 +1,14 @@
+.container-fluid{
+    background-image: url('../../../../assets/img/spoons.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:center;
+    height: 89vh;
+}
+.btn{
+    width:30%;
+}
+
+.row{
+    width:45%;
+}

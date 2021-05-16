@@ -1,0 +1,47 @@
+<div class="container text-center">
+    <h2 class="py-5">Product Edit Form !!</h2>
+    <div class="row mx-auto">
+        <img [src]="image" alt="image" class="mx-auto">
+    </div>
+    <form [formGroup]="productForm" class="py-5" (ngSubmit)="submit()">
+    <div class="row mx-auto my-3">
+        <mat-form-field>
+            <mat-label>Product Name</mat-label>
+            <input matInput placeholder="Enter Username" formControlName="name"> 
+            <mat-error>
+                <div *ngIf="productForm.get('name').hasError('required')">Product name Required</div>
+            </mat-error>
+        </mat-form-field>
+    </div>
+    <div class="row  mx-auto my-3">
+        <mat-form-field appearance="fill">
+            <mat-label>Product Category:</mat-label>
+                <mat-select  formControlName="category">
+                    <mat-option value="continental">Continental</mat-option>
+                    <mat-option value="chinese">Chinese</mat-option>
+                    <mat-option value="italian">Italian</mat-option>
+                    <mat-option value="mexican">Mexican</mat-option>
+                    <mat-option value="drinks">Drinks</mat-option>
+                </mat-select>
+                <mat-error>
+                    <div *ngIf="productForm.get('category').hasError('required')">Product category Required</div>
+                </mat-error>
+            </mat-form-field>
+    </div>
+    <div class="row my-3 mx-auto">
+        <mat-form-field>
+            <mat-label>Product Amount</mat-label>
+            <input type="number" matInput placeholder="Enter Amount" formControlName="amount"> 
+            <mat-error>
+                <div *ngIf="productForm.get('amount').hasError('required')">Product amount Required</div>
+            </mat-error>
+        </mat-form-field>
+     </div>
+     <div class="row mt-4 mx-auto">
+         <button type="submit" class="btn btn-md btn-success mx-auto" [disabled]="!productForm.valid" >Update</button>
+     </div>
+     <div class="row  mt-2 mx-auto">
+        <button type="submit" class="btn btn-md btn-danger mx-auto" (click)="back()" >Back</button>
+    </div>
+    </form>
+</div>

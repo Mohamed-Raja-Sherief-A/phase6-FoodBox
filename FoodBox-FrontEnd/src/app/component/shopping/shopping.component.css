@@ -1,0 +1,35 @@
+.myabsolute{
+    position: relative;
+    z-index: 3;
+    
+}
+.myrelative{
+    
+     position: absolute; /* Stay in place */
+     left: 95%;
+     top:30px;  
+     display: fixed;
+}
+.myrelative1{
+    position: absolute; /* Stay in place */
+    display: fixed;
+    left: 95%;
+    top:100px;
+    
+}
+.myrelative2{
+    position: absolute; /* Stay in place */
+    display: fixed;
+    left: 95%;
+    top:180px;
+    
+}
+.myrelative3{
+    position: absolute; /* Stay in place */
+    
+     left: 95%;
+     top:260px;
+    
+}
+
+

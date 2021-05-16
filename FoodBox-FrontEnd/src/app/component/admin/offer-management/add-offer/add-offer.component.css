@@ -1,0 +1,14 @@
+button{
+    width:35%;
+}
+input{
+    border:none;
+    border-bottom: 3px solid green;
+    padding:3px;
+    background-color: transparent;
+}
+
+input:focus{
+    outline: none;
+    background-color: transparent;
+}

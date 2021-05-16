@@ -1,0 +1,14 @@
+<div class="myabsolute">
+    <div class="myrelative">
+        <button  mat-fab color="warn" matTooltip="Menu" matTooltipPosition="left" (click)="change()">
+            <mat-icon *ngIf="nav">menu</mat-icon> 
+            <mat-icon *ngIf="!nav">close</mat-icon>
+        </button>
+        
+    </div>
+    <a class=" myrelative1 animate__animated animate__fadeInDown " *ngIf="!nav" mat-fab color="primary" matTooltip="Home" matTooltipPosition="left" [routerLink]="['Home']"><mat-icon>home</mat-icon> </a>
+    <a class=" myrelative2 animate__animated animate__fadeInDown " *ngIf="!nav" mat-fab color="accent" matTooltip="Cart" matTooltipPosition="left" [routerLink]="['CheckOut']"><mat-icon>add_shopping_cart</mat-icon>  {{cartSize}}</a>
+    <a class=" myrelative3 animate__animated animate__fadeInDown " *ngIf="!nav" mat-fab color="warn" matTooltip="Log Out" matTooltipPosition="left" (click)="logout()"><mat-icon>exit_to_app</mat-icon></a>
+</div>
+<app-nav-shopping></app-nav-shopping>
+<router-outlet></router-outlet>

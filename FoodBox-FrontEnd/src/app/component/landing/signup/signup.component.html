@@ -1,0 +1,43 @@
+<div class="modal">
+    <div class="container  animate__animated animate__bounceInDown text-center py-5">
+        <div class="d-flex justify-content-end">
+            <button class="btn btn-sm" (click)="close()"><i class="fa fa-window-close"style="font-size:30px;color:red"></i></button>
+        </div>
+        <h1>User Registration !!</h1>
+        <form [formGroup]="signupForm" class="py-4" (ngSubmit)="submit()">
+        <div class="row mx-auto mx-3">
+            <mat-form-field>
+                <mat-label>Username</mat-label>
+                <input matInput id="sign-up-username" placeholder="Enter Username" formControlName="username"> 
+                <mat-error>
+                    <div *ngIf="signupForm.get('username').hasError('required')">Username Required</div>
+                </mat-error>
+                <mat-error>
+                    <div  *ngIf="signupForm.get('username').errors?.usernameExists">Username Already Exists!!</div>
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="row mx-auto my-3">
+            <mat-form-field>
+                <mat-label>Password</mat-label>
+                <input matInput id="sign-up-password" placeholder="Enter Password" formControlName="password"> 
+                <mat-error>
+                    <div *ngIf="signupForm.get('password').hasError('required')">Password Required</div>
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="row mx-auto my-3">
+            <mat-form-field>
+                <mat-label>Re-Password</mat-label>
+                <input matInput id="sign-up-repassword" placeholder="Re Enter Password" formControlName="repassword"> 
+                <mat-error>
+                    <div *ngIf="signupForm.get('repassword').hasError('required')">Password Required</div>
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="row mx-auto mt-5">
+            <button type="submit" id="sign-up-confirm" class="btn btn-md btn-success mx-auto" [disabled]="!signupForm.valid" >Sign Up</button>
+          </div>
+        </form>
+    </div>
+</div>

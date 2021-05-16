@@ -1,0 +1,12 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-4 my-auto ">
+        <app-login-registration (loginclick)="logincheck($event)" (signupclick)="signupcheck($event)"></app-login-registration>
+    </div>
+    <div class="col-lg-8 my-auto text-center shadow-lg">
+        <app-custom-carousal></app-custom-carousal>
+    </div>
+  </div>
+</div>
+<app-login *ngIf="login" (closeEmitter)="logincheck($event)"></app-login>
+<app-signup *ngIf="signup" (closeEmitter)="signupcheck($event)"></app-signup>

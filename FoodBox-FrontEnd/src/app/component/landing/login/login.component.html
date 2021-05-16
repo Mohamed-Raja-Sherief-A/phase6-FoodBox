@@ -1,0 +1,32 @@
+<div class="modal">
+    <div class="container animate__animated animate__bounceInDown text-center py-5">
+        <div class="d-flex justify-content-end">
+            <button class="btn btn-sm" (click)="close()"><i class="fa fa-window-close"style="font-size:30px;color:red"></i></button>
+        </div>
+        <h1>User Login !!</h1>
+        <form [formGroup]="loginForm" class="py-5" (ngSubmit)="submit()">
+            <div class="row  mx-auto my-3">
+                <mat-form-field>
+                    <mat-label>Username</mat-label>
+                    <input id="login-username" matInput placeholder="Enter Username" formControlName="username"> 
+                    <mat-error>
+                        <div *ngIf="loginForm.get('username').hasError('required')">Username Required</div>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="row mx-auto my-3">
+                <mat-form-field>
+                    <mat-label>Password</mat-label>
+                    <input id="login-password" type="password" matInput placeholder="Enter Password" formControlName="password"> 
+                    <mat-error>
+                        <div *ngIf="loginForm.get('password').hasError('required')">Password Required</div>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="row mx-auto mt-5">
+              <button type="submit" id="login-confirm" class="btn btn-md btn-success mx-auto" [disabled]="!loginForm.valid" >Log In</button>
+            </div>
+        </form>
+     
+    </div>
+</div>

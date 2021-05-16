@@ -1,0 +1,48 @@
+<div class="container-fluid">
+    <h1 class="text-center py-3">Product Form</h1>
+<form [formGroup]="productForm" (ngSubmit)="productSubmit()">
+    
+        <div class="row  my-3 mx-auto">
+            <mat-form-field>
+                <mat-label>Product Name</mat-label>
+                <input matInput placeholder="Enter Username" formControlName="name"> 
+                <mat-error>
+                    <div *ngIf="productForm.get('name').hasError('required')">Product name Required</div>
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="row  my-5 mx-auto">
+            <mat-form-field appearance="fill">
+            <mat-label>Product Category:</mat-label>
+                <mat-select  formControlName="category">
+                    <mat-option value="continental">Continental</mat-option>
+                    <mat-option value="chinese">Chinese</mat-option>
+                    <mat-option value="italian">Italian</mat-option>
+                    <mat-option value="mexican">Mexican</mat-option>
+                    <mat-option value="drinks">Drinks</mat-option>
+                </mat-select>
+                <mat-error>
+                    <div *ngIf="productForm.get('category').hasError('required')">Product category Required</div>
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="row  my-3 mx-auto">
+            <mat-form-field>
+                <mat-label>Product Amount</mat-label>
+                <input type="number" matInput placeholder="Enter Amount" formControlName="amount"> 
+                <mat-error>
+                    <div *ngIf="productForm.get('amount').hasError('required')">Product amount Required</div>
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="row  my-3 mx-auto">
+            Product Image:
+            <input type="file"  (change)="onFileChanged($event)" formControlName="file">
+        </div>
+        <div class="row my-5 mx-auto">
+         
+            <button type="submit" class="btn btn-md btn-success mx-auto" [disabled]="!productForm.valid">Submit</button>
+        </div>
+        <p *ngIf="productForm.status==='pending'">Loading...</p>
+</form>
+</div>

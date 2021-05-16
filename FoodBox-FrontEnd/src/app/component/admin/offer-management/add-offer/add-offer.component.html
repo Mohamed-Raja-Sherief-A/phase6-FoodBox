@@ -1,0 +1,14 @@
+<h4 class="text-center my-5">Add Offer !!</h4>
+<form [formGroup]="offerForm" (ngSubmit)="submit()">
+    <div class="row my-3">
+        Code:
+        <input type="text" formControlName="code">
+    </div>
+    <div class="row my-3">
+        Offer:
+        <input type="text" formControlName="offer">
+    </div>
+    <div class="row">
+    <button type="submit" class="btn btn-primmary btn-success mx-auto" [disabled]="!offerForm.valid">Submit</button>
+    </div>
+</form>

@@ -1,0 +1,16 @@
+.nav-link{
+    color:rgb(53, 47, 47);
+}
+button{
+    transition: all 0.9s;
+}
+.myrelative{
+    width: 100%;
+}
+.myabsolute{
+    left:100%;
+}
+.abshome{
+    left:100%;
+    top:40%;
+}

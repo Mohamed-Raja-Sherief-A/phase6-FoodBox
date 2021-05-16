@@ -1,0 +1,7 @@
+.container-fluid .row{
+ height: 67vh;
+ background-image: linear-gradient(to right bottom,rgba(182, 230, 174, 0.438),hsla(160, 64%, 43%, 0.494)),url("../../../../assets/img/background.jpg");
+ background-position: bottom;
+background-repeat: no-repeat;
+background-size: cover;
+}
