@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite hostname="MSI" failures="1" tests="1" name="com.config.test.LoginTest" time="0.025" errors="0" timestamp="15 May 2021 16:46:00 GMT">
+  <testcase classname="com.config.test.LoginTest" name="Test1" time="0.012">
+    <failure type="java.lang.NullPointerException" message="Cannot invoke &amp;quot;org.openqa.selenium.WebDriver.findElement(org.openqa.selenium.By)&amp;quot; because &amp;quot;com.config.test.ConfigClass.driver&amp;quot; is null">
+      <![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebDriver.findElement(org.openqa.selenium.By)" because "com.config.test.ConfigClass.driver" is null
+	at com.config.test.LoginTest.Test1(LoginTest.java:12)
+... Removed 25 stack frames]]>
+    </failure>
+  </testcase>
+</testsuite>
