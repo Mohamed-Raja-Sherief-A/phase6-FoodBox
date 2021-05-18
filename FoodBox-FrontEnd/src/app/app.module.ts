@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModuleModule } from './material-module/material-module.module';
 import {MatNativeDateModule} from '@angular/material/core';
+import { AdminModule } from './component/admin/admin.module';
 
 
 
@@ -23,6 +24,7 @@ import {MatNativeDateModule} from '@angular/material/core';
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
+    AdminModule,
     HttpClientModule,
     BrowserAnimationsModule,
     MaterialModuleModule,

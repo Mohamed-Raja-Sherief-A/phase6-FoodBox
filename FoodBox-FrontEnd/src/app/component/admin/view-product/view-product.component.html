@@ -1,8 +1,11 @@
 <div class="container text-center">
     <h2>Product View</h2>
-    <div class="row mt-4">
+    <div  class="main" *ngIf="success">
+        <mat-spinner class="sub"></mat-spinner>
+    </div>
+   <div class="row mt-4">
         <div class="col-lg-3 mb-3" *ngFor="let product of products;let i=index">
             <app-product [product]="product"></app-product>
         </div>
-    </div>
+    </div> 
 </div>

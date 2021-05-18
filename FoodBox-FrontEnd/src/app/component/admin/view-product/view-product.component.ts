@@ -8,12 +8,15 @@ import { ProductserviceService } from 'src/app/service/product/productservice.se
   styleUrls: ['./view-product.component.css']
 })
 export class ViewProductComponent implements OnInit {
+  success:boolean=true;
   products:Product[]=[];
   constructor(private service:ProductserviceService) { }
 
   ngOnInit(): void {
     this.service.getProducts().subscribe(
-      products=>this.products=products
+      products=>this.products=products,
+      err=>console.log(err),
+      ()=>this.success=false
     );
   }
 

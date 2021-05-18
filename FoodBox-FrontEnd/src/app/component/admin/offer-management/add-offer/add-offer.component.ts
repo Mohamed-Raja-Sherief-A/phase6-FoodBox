@@ -9,6 +9,7 @@ import { OfferserviceService } from 'src/app/service/offer/offerservice.service'
   styleUrls: ['./add-offer.component.css']
 })
 export class AddOfferComponent implements OnInit {
+  success:boolean=false;
   offerForm:FormGroup=new FormGroup({
     code:new FormControl('',Validators.required),
     offer:new FormControl('',Validators.required)
@@ -18,6 +19,7 @@ export class AddOfferComponent implements OnInit {
   ngOnInit(): void {
   }
   submit(){
+    this.success=true;
     let offer:Offer={
       oid:+0,
       code:this.offerForm.get('code').value,
@@ -25,6 +27,7 @@ export class AddOfferComponent implements OnInit {
     }
     this.service.addOffer(offer).subscribe(
       ()=>{
+        this.success=false;
         alert("Offer Added Successfully");
         this.offerForm.reset();
       }

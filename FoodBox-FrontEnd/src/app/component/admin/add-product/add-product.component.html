@@ -43,6 +43,9 @@
          
             <button type="submit" class="btn btn-md btn-success mx-auto" [disabled]="!productForm.valid">Submit</button>
         </div>
-        <p *ngIf="productForm.status==='pending'">Loading...</p>
+        <div class="row my-3 mx-auto" *ngIf="success">
+            <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+        </div>
+        
 </form>
 </div>

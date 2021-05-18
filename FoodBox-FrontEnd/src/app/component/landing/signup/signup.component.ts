@@ -10,6 +10,7 @@ import { UserserviceService } from 'src/app/service/user/userservice.service';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
+  success:boolean=false;
   @Output() closeEmitter:EventEmitter<boolean>=new EventEmitter<boolean>();
   constructor(private service:UserserviceService) { }
   signupForm:FormGroup=new FormGroup({
@@ -25,9 +26,11 @@ export class SignupComponent implements OnInit {
     this.closeEmitter.emit(false);
   }
   submit(){
+    this.success=true;
     let user:User={username:this.signupForm.get('username').value,password:this.signupForm.get('password').value};
     this.service.addUser(user).subscribe(
       ()=>{
+        this.success=false;
         alert('User Added Successfull');
         this.signupForm.reset();
       }

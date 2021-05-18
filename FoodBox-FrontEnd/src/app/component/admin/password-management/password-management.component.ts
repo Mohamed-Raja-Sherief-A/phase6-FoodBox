@@ -10,6 +10,7 @@ import { UserserviceService } from 'src/app/service/user/userservice.service';
   styleUrls: ['./password-management.component.css']
 })
 export class PasswordManagementComponent implements OnInit {
+  success:boolean=false;
   user:User=null;
   passwordForm:FormGroup=new FormGroup({
     oldpassword:new FormControl('',[Validators.required]),
@@ -24,12 +25,14 @@ export class PasswordManagementComponent implements OnInit {
     );
   }
   submit(){
+    this.success=true;
     if(this.user.password===this.passwordForm.get('oldpassword').value && this.passwordForm.get('newpassword').value===this.passwordForm.get('repassword').value){
       this.userService.addUser({username:this.user.username,password:this.passwordForm.get('repassword').value}).subscribe(
-        ()=>{alert("Password updated");this.passwordForm.reset();}
+        ()=>{this.success=false;alert("Password updated");this.passwordForm.reset();}
       )
     }
     else{
+      this.success=false;
       alert("Invalid Old Password / New Password Doesn't Match")
     }
   }

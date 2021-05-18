@@ -10,6 +10,7 @@ import { ProductserviceService } from 'src/app/service/product/productservice.se
 })
 export class AddProductComponent implements OnInit {
   selectedFile:File;
+  success:boolean=false;
   constructor(private service:ProductserviceService) { }
   productForm:FormGroup=new FormGroup({
     name:new FormControl('',Validators.required),
@@ -23,6 +24,7 @@ export class AddProductComponent implements OnInit {
     this.selectedFile=event.target.files[0];
   }
   productSubmit(){
+    this.success=true;
     let product:Product={
       pid:+0,
       name:this.productForm.get('name').value,
@@ -32,7 +34,7 @@ export class AddProductComponent implements OnInit {
       status:'Active'
     }
     this.service.addProducts(product,this.selectedFile).subscribe(
-      ()=>{alert("Product Added Succesfully");this.productForm.reset();}
+      ()=>{this.success=false;alert("Product Added Succesfully");this.productForm.reset();}
     );
   }
 }

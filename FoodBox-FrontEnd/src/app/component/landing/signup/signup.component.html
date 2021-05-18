@@ -38,6 +38,9 @@
         <div class="row mx-auto mt-5">
             <button type="submit" id="sign-up-confirm" class="btn btn-md btn-success mx-auto" [disabled]="!signupForm.valid" >Sign Up</button>
           </div>
+        <div class="row mx-auto my-2" *ngIf="success">
+            <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+        </div>
         </form>
     </div>
 </div>

@@ -19,6 +19,10 @@
               </select>
         </div>
     </div>
+    <div class="row mt-4" *ngIf="products.length===0">
+        <h3 class="text-center">No Product Available</h3>
+        <small class="text-center">Try To Add or Enable Products</small>
+    </div>
     <div class="row mt-4">
         <div class="col-lg-4 mx-auto mt-3" *ngFor="let product of products | customPipe : search :category">
             <app-shopping-product [product]="product"   ></app-shopping-product>

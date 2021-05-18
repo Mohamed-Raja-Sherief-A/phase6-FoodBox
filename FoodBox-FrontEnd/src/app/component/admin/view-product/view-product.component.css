@@ -1,0 +1,11 @@
+.main{
+    position: relative;
+    z-index: 3;
+    height: 65vh;
+}
+.sub{
+    position: absolute;
+    left: 50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+}

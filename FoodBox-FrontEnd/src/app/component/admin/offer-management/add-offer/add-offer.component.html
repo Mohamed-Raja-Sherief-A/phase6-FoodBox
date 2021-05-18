@@ -11,4 +11,7 @@
     <div class="row">
     <button type="submit" class="btn btn-primmary btn-success mx-auto" [disabled]="!offerForm.valid">Submit</button>
     </div>
+    <div class="row my-3" *ngIf="success">
+        <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+    </div>
 </form>
