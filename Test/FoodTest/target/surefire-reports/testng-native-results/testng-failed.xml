@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite verbose="0" name="Failed suite [Command line suite]">
+  <test name="Command line test(failed)" preserve-order="false">
+    <classes>
+      <class name="com.food.LoginTest">
+        <methods>
+          <include name="Test3"/>
+          <include name="config"/>
+        </methods>
+      </class>
+      <class name="com.food.TestClass1">
+        <methods>
+          <include name="end"/>
+        </methods>
+      </class>
+    </classes>
+  </test>
+</suite>

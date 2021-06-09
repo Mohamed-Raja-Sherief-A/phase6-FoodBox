@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite hostname="MSI" name="com.food.AppTest" tests="1" failures="0" timestamp="9 Jun 2021 13:33:13 GMT" time="0.08" errors="0">
+  <testcase name="testApp on instance testApp(com.food.AppTest)" time="0.031" classname="com.food.AppTest"/>
+</testsuite>
